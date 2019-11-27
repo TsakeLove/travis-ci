@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/TsakeLove/travis-ci.git"
   },
   "engines": {
     "node": "10.17.0"
