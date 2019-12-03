@@ -1,11 +1,9 @@
 'use strict'
 const express = require('express')
 const app = express()
+const path = require("path")
 app.get('/', (req, res) => {
-  res.send('Hello,world!!!')
+  res.sendFile(path.join(__dirname, 'index.html'))
 })
-let port = process.env.PORT
-if (port === null || port === '') {
-  port = 8800
-}
+let port = process.env.PORT || 8800
 app.listen(port, console.log('server listening...'))

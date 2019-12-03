@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+ function check (input)
+  {
+  	let ok = true;
+  	for ( let i = 0; i<input.length;i++)
+  	{
+  		let chr = input.charAt(i);
+  		let found = false;
+  		for ( let j = 0; j<check.length;j++)   if (chr == check[j]) found = true;
+  		
+  		if (!found) ok = false;
+  	}
+  	return ok; 
+  }
+  function test1 (form)
+  {
+    let ok = true;
+  	if ((form.text1.value == "")|| ( form.text1.value[0]!=form.text1.value[0].toUpperCase() )){ alert("Неправильно введено ім’я");}
+      else 
+  	if (form.text2.value == "" || form.text2.value.indexOf('@', 0) == -1) { alert("Неправильно введена адреса e-mail!");}
+      else 
+  	if (isNaN(form.telephone.value) || (form.telephone.value=="")){  alert("Номер не коректний.");}
+     else
+      alert("Усі дані введено коректно");
+  	
+  }
+</script>
+</head>
+<body>
+<form name="form">
+Вкажіть ваше ім’я:<br>
+<input type="text" name="text1"><br>
+Вкажіть вашу адресу e-mail:<br>
+<input type="text" name="text2"><br>
+Номер: <br>
+<input type="text" name="telephone"> <br>
+<input type="button" name="button1" value="Перевірка" onclick="test1(form)"><br>
+</form>
+</body>
+</html>
